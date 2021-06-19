@@ -8,15 +8,17 @@ export const FlowerType = (props) => {
         <label htmlFor="regular">Regular</label>
         <input
           type="radio"
-          id="regular"
           name="flowerType"
+          id="regular"
+          value="regular"
           onChange={() => {}}
         />
         <label htmlFor="irregular">Irregular</label>
         <input
           type="radio"
-          id="irregular"
           name="flowerType"
+          id="irregular"
+          value="irregular"
           onChange={() => {}}
         />
       </div>

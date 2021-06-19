@@ -8,22 +8,25 @@ export const StamenArrangement = (props) => {
         <label htmlFor="alternateFromPetals">Alternate from petals</label>
         <input
           type="radio"
-          id="alternateFromPetals"
           name="stamenArrangement"
+          id="alternateFromPetals"
+          value="alternateFromPetals"
           onChange={() => {}}
         />
         <label htmlFor="oppositeFromPetals">Opposite from petals</label>
         <input
           type="radio"
-          id="oppositeFromPetals"
           name="stamenArrangement"
+          id="oppositeFromPetals"
+          value="oppositeFromPetals"
           onChange={() => {}}
         />
         <label htmlFor="doesntApply">Doesn't apply</label>
         <input
           type="radio"
-          id="doesntApply"
           name="stamenArrangement"
+          id="doesntApply"
+          value="doesntApply"
           onChange={() => {}}
         />
       </div>

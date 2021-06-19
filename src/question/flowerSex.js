@@ -8,15 +8,17 @@ export const FlowerSex = (props) => {
         <label htmlFor="bisexual">Bisexual</label>
         <input
           type="radio"
-          id="bisexual"
           name="flowerSex"
+          id="bisexual"
+          value="bisexual"
           onChange={() => {}}
         />
         <label htmlFor="unisexual">Unisexual</label>
         <input
           type="radio"
-          id="unisexual"
           name="flowerSex"
+          id="unisexual"
+          value="unisexual"
           onChange={() => {}}
         />
       </div>

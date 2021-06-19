@@ -8,22 +8,25 @@ export const PistilPosition = (props) => {
         <label htmlFor="superior">Superior</label>
         <input
           type="radio"
-          id="superior"
           name="pistilPosition"
+          id="superior"
+          value="superior"
           onChange={() => {}}
         />
         <label htmlFor="inferior">Inferior</label>
         <input
           type="radio"
-          id="inferior"
           name="pistilPosition"
+          id="inferior"
+          value="inferior"
           onChange={() => {}}
         />
         <label htmlFor="partWay">Part way</label>
         <input
           type="radio"
-          id="partWay"
           name="pistilPosition"
+          id="partWay"
+          value="partWay"
           onChange={() => {}}
         />
       </div>

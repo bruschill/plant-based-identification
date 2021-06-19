@@ -8,15 +8,17 @@ export const SepalType = (props) => {
         <label htmlFor="separate">Separate</label>
         <input
           type="radio"
-          id="separate"
           name="sepalType"
+          id="separate"
+          value="separate"
           onChange={() => {}}
         />
         <label htmlFor="united">United</label>
         <input
           type="radio"
-          id="united"
           name="sepalType"
+          id="united"
+          value="united"
           onChange={() => {}}
         />
       </div>
