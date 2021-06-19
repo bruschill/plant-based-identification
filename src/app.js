@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import React, { Fragment } from 'react';
 import { FlowerProfiler} from "./flowerProfiler";
 
 import './app.css';

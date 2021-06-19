@@ -1,4 +1,4 @@
-import React, { setState } from 'react';
+import React, { useState } from 'react';
 import { list as questionList } from "./question/lists";
 import { optionalList as optionalQuestionList } from "./question/lists";
 import { Fragment } from "react";
@@ -23,7 +23,7 @@ const INITIAL_STATE = {
 }
 
 export const FlowerProfiler = (props) => {
-  let [profile, setProfile] = setState(INITIAL_STATE);
+  const [profile, setProfile] = useState(INITIAL_STATE);
 
   return (
     <Fragment>
