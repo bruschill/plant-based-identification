@@ -10,10 +10,10 @@ import { StamenType } from "./stamenType";
 import { StamenCount } from "./stamenCount";
 import { StamenArrangement } from "./stamenArrangement";
 import { ChamberCount } from "./chamberCount";
-import { PistilCount } from "./pistilCount";
-import { PistilPosition } from "./pistilPosition";
 import { CarpelCount } from "./carpelCount";
 import { StyleCount } from "./styleCount";
+import { PistilCount } from "./pistilCount";
+import { PistilPosition } from "./pistilPosition";
 
 export const list = [
   FlowerType,
