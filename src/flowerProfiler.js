@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import { list as questionList } from "./question/lists";
 import { optionalList as optionalQuestionList } from "./question/lists";
-import { Fragment } from "react";
 
 const INITIAL_STATE = {
   flowerType: '',
@@ -27,8 +26,10 @@ export const FlowerProfiler = (props) => {
 
   return (
     <Fragment>
+      <h2>Required Questions</h2>
       {questionList.map((Component, key) => (<Component key={key} />))}
 
+      <h2>Optional Questions</h2>
       {optionalQuestionList.map((Component, key) => (<Component key={key} />))}
     </Fragment>
   );

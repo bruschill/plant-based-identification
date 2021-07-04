@@ -5,38 +5,49 @@ export const StamenType = (props) => {
     <Fragment>
       <h3>Stamen Type</h3>
       <div className="form-group">
-        <label htmlFor="separate">Separate</label>
-        <input
-          type="radio"
-          name="stamenType"
-          id="separate"
-          value="separate"
-          onChange={() => {}}
-        />
-        <label htmlFor="fusedToEachOther">Fused to each other</label>
-        <input
-          type="radio"
-          name="stamenType"
-          id="fusedToEachOther"
-          value="fusedToEachOther"
-          onChange={() => {}}
-        />
-        <label htmlFor="fusedToPetals">Fused to petals</label>
-        <input
-          type="radio"
-          name="stamenType"
-          id="fusedToPetals"
-          value="fusedToPetals"
-          onChange={() => {}}
-        />
-        <label htmlFor="fusedToPistil">Fused to pistil</label>
-        <input
-          type="radio"
-          name="stamenType"
-          id="fusedToPistil"
-          value="fusedToPistil"
-          onChange={() => {}}
-        />
+        <div>
+          <input
+            type="radio"
+            name="stamenType"
+            id="stamenSeparate"
+            value="separate"
+            onChange={() => {}}
+          />
+          <label htmlFor="stamenSeparate">Separate</label>
+        </div>
+
+        <div>
+          <input
+            type="radio"
+            name="stamenType"
+            id="stamenFusedToEachOther"
+            value="fusedToEachOther"
+            onChange={() => {}}
+          />
+          <label htmlFor="stamenFusedToEachOther">Fused to each other</label>
+        </div>
+
+        <div>
+          <input
+            type="radio"
+            name="stamenType"
+            id="stamenFusedToPetals"
+            value="fusedToPetals"
+            onChange={() => {}}
+          />
+          <label htmlFor="stamenFusedToPetals">Fused to petals</label>
+        </div>
+
+        <div>
+          <input
+            type="radio"
+            name="stamenType"
+            id="stamenFusedToPistil"
+            value="fusedToPistil"
+            onChange={() => {}}
+          />
+          <label htmlFor="stamenFusedToPistil">Fused to pistil</label>
+        </div>
       </div>
     </Fragment>
   );

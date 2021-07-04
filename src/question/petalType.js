@@ -5,22 +5,27 @@ export const PetalType = (props) => {
     <Fragment>
       <h3>Petal Type</h3>
       <div className="form-group">
-        <label htmlFor="separate">Separate</label>
-        <input
-          type="radio"
-          name="petalType"
-          id="separate"
-          value="separate"
-          onChange={() => {}}
-        />
-        <label htmlFor="united">United</label>
-        <input
-          type="radio"
-          name="petalType"
-          id="united"
-          value="united"
-          onChange={() => {}}
-        />
+        <div>
+          <input
+            type="radio"
+            name="petalType"
+            id="petalSeparate"
+            value="separate"
+            onChange={() => {}}
+          />
+          <label htmlFor="petalSeparate">Separate</label>
+        </div>
+
+        <div>
+          <input
+            type="radio"
+            name="petalType"
+            id="petalUnited"
+            value="united"
+            onChange={() => {}}
+          />
+          <label htmlFor="petalUnited">United</label>
+        </div>
       </div>
     </Fragment>
   );
