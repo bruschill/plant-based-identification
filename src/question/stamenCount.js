@@ -4,7 +4,7 @@ export const StamenCount = (props) => {
   return (
     <Fragment>
       <h3>Stamen Count</h3>
-      <div className="form-group">
+      <div>
         <div>
           <label htmlFor="stamenCount">How many?</label>
           <input

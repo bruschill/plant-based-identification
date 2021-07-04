@@ -4,7 +4,7 @@ export const PistilPosition = (props) => {
   return (
     <Fragment>
       <h3>Pistil Position</h3>
-      <div className="form-group">
+      <div>
         <div>
           <input
             type="radio"

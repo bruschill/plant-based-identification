@@ -4,7 +4,7 @@ export const SepalType = (props) => {
   return (
     <Fragment>
       <h3>Sepal Type</h3>
-      <div className="form-group">
+      <div>
         <div>
           <input
             type="radio"

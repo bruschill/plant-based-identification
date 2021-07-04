@@ -4,7 +4,7 @@ export const SepalCount = (props) => {
   return (
     <Fragment>
       <h3>Sepal Count</h3>
-      <div className="form-group">
+      <div>
         <label htmlFor="sepalCount">How many?</label>
         <input
           type="text"

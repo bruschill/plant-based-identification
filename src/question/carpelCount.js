@@ -4,7 +4,7 @@ export const CarpelCount = (props) => {
   return (
     <Fragment>
       <h3>Carpel Count</h3>
-      <div className="form-group">
+      <div>
         <label htmlFor="carpelCount">How many?</label>
         <input
           type="text"

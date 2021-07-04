@@ -4,7 +4,7 @@ export const PetalColor = (props) => {
   return (
     <Fragment>
       <h3>Petal Color</h3>
-      <div className="form-group">
+      <div>
         <label htmlFor="petalColor">What color?</label>
         <input
           type="text"

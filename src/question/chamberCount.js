@@ -4,7 +4,7 @@ export const ChamberCount = (props) => {
   return (
     <Fragment>
       <h3>Chamber Count</h3>
-      <div className="form-group">
+      <div>
         <div>
           <label htmlFor="chamberCount">How many?</label>
           <input

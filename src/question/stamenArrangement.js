@@ -4,7 +4,7 @@ export const StamenArrangement = (props) => {
   return (
     <Fragment>
       <h3>Stamen Arrangement</h3>
-      <div className="form-group">
+      <div>
         <div>
           <input
             type="radio"

@@ -4,7 +4,7 @@ export const PistilCount = (props) => {
   return (
     <Fragment>
       <h3>Pistil Count</h3>
-      <div className="form-group">
+      <div>
         <label htmlFor="pistilCount">How many?</label>
         <input
           type="text"

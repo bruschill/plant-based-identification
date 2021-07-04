@@ -4,7 +4,7 @@ export const StyleCount = (props) => {
   return (
     <Fragment>
       <h3>Style Count</h3>
-      <div className="form-group">
+      <div>
         <label htmlFor="styleCount">How many?</label>
         <input
           type="text"

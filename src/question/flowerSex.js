@@ -4,7 +4,7 @@ export const FlowerSex = (props) => {
   return (
     <Fragment>
       <h3>Flower Sex</h3>
-      <div className="form-group">
+      <div>
         <div>
           <input
             type="radio"
