@@ -12,6 +12,9 @@ export const StyleCount = (props) => {
           name="styleCount"
           onChange={() => {}}
         />
+      </div>
+
+      <div>
         <label htmlFor="stigmaLobeCount">If 1, how many stigma lobes?</label>
         <input
           type="text"
@@ -19,7 +22,6 @@ export const StyleCount = (props) => {
           name="stigmaLobeCount"
           onChange={() => {}}
         />
-
       </div>
     </Fragment>
   );

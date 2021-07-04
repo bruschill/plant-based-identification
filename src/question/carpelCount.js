@@ -12,8 +12,8 @@ export const CarpelCount = (props) => {
           name="carpelCount"
           onChange={() => {}}
         />
-        (count styles or stigmas)
       </div>
+      (count styles or stigmas)
     </Fragment>
   );
 }

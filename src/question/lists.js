@@ -12,6 +12,8 @@ import { StamenArrangement } from "./stamenArrangement";
 import { ChamberCount } from "./chamberCount";
 import { PistilCount } from "./pistilCount";
 import { PistilPosition } from "./pistilPosition";
+import { CarpelCount } from "./carpelCount";
+import { StyleCount } from "./styleCount";
 
 export const list = [
   FlowerType,
@@ -29,6 +31,8 @@ export const optionalList = [
   StamenCount,
   StamenArrangement,
   ChamberCount,
+  CarpelCount,
+  StyleCount,
   PistilCount,
   PistilPosition
 ]

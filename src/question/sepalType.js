@@ -5,27 +5,25 @@ export const SepalType = (props) => {
     <Fragment>
       <h3>Sepal Type</h3>
       <div>
-        <div>
-          <input
-            type="radio"
-            name="sepalType"
-            id="sepalSeparate"
-            value="separate"
-            onChange={() => {}}
-          />
-          <label htmlFor="sepalSeparate">Separate</label>
-        </div>
+        <input
+          type="radio"
+          name="sepalType"
+          id="sepalSeparate"
+          value="separate"
+          onChange={() => {}}
+        />
+        <label htmlFor="sepalSeparate">Separate</label>
+      </div>
 
-        <div>
-          <input
-            type="radio"
-            name="sepalType"
-            id="sepalUnited"
-            value="united"
-            onChange={() => {}}
-          />
-          <label htmlFor="sepalUnited">United</label>
-        </div>
+      <div>
+        <input
+          type="radio"
+          name="sepalType"
+          id="sepalUnited"
+          value="united"
+          onChange={() => {}}
+        />
+        <label htmlFor="sepalUnited">United</label>
       </div>
     </Fragment>
   );

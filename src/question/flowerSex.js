@@ -5,27 +5,25 @@ export const FlowerSex = (props) => {
     <Fragment>
       <h3>Flower Sex</h3>
       <div>
-        <div>
-          <input
-            type="radio"
-            name="flowerSex"
-            id="bisexual"
-            value="bisexual"
-            onChange={() => {}}
-          />
-          <label htmlFor="bisexual">Bisexual</label>
-        </div>
+        <input
+          type="radio"
+          name="flowerSex"
+          id="bisexual"
+          value="bisexual"
+          onChange={() => {}}
+        />
+        <label htmlFor="bisexual">Bisexual</label>
+      </div>
 
-        <div>
-          <input
-            type="radio"
-            name="flowerSex"
-            id="unisexual"
-            value="unisexual"
-            onChange={() => {}}
-          />
-          <label htmlFor="unisexual">Unisexual</label>
-        </div>
+      <div>
+        <input
+          type="radio"
+          name="flowerSex"
+          id="unisexual"
+          value="unisexual"
+          onChange={() => {}}
+        />
+        <label htmlFor="unisexual">Unisexual</label>
       </div>
     </Fragment>
   );
