@@ -1,6 +1,6 @@
-import React, { Fragment, useState } from 'react';
-import { list as questionList } from "./question/lists";
-import { optionalList as optionalQuestionList } from "./question/lists";
+import React, { useState } from 'react';
+import { list as questionList,
+         optionalList as optionalQuestionList } from "./question/lists";
 
 const INITIAL_STATE = {
   flowerType: '',
@@ -23,14 +23,30 @@ const INITIAL_STATE = {
 
 export const FlowerProfiler = (props) => {
   const [profile, setProfile] = useState(INITIAL_STATE);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(props.currentQuestionIndex || 0)
+
+  const CurrentQuestion = () => {
+    const Component = questionList[currentQuestionIndex]
+    return <Component />;
+  };
+
+  const previousQuestion = () => {
+    if(currentQuestionIndex > 0) {
+      setCurrentQuestionIndex((currentQuestionIndex) => currentQuestionIndex - 1 )
+    }
+  };
+
+  const nextQuestion = () => {
+    if(currentQuestionIndex < questionList.length - 1) {
+      setCurrentQuestionIndex((currentQuestionIndex) => currentQuestionIndex + 1)
+    }
+  };
 
   return (
-    <Fragment>
-      <h2>Required Questions</h2>
-      {questionList.map((Component, key) => (<Component key={key} />))}
-
-      <h2>Optional Questions</h2>
-      {optionalQuestionList.map((Component, key) => (<Component key={key} />))}
-    </Fragment>
+    <>
+      <CurrentQuestion />
+      <button onClick={previousQuestion}>Previous</button>
+      <button onClick={nextQuestion}>Next</button>
+    </>
   );
 }

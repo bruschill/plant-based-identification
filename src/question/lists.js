@@ -24,7 +24,7 @@ export const list = [
   PetalType,
   PetalCount,
   PetalColor
-]
+];
 
 export const optionalList = [
   StamenType,
@@ -35,4 +35,4 @@ export const optionalList = [
   StyleCount,
   PistilCount,
   PistilPosition
-]
+];
