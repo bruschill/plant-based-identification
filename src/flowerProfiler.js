@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import baseQuestions from './questions/base.json';
+import { Question } from "./question";
 // import optionalQuestions from './optional.json';
 
 const INITIAL_STATE = {
@@ -24,49 +25,9 @@ export const FlowerProfiler = (props) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
 
   const CurrentQuestion = () => {
-    const question = baseQuestions[currentQuestionIndex];
+    const questionData = baseQuestions[currentQuestionIndex];
 
-    const formatHeader = () =>
-      question.name
-      .replace(/([A-Z])/g, (match) => ` ${match}`)
-      .replace(/^./, (match) => match.toUpperCase())
-      .trim();
-
-    const capitalize = ([firstLetter, ...restOfWord]) =>
-      firstLetter.toUpperCase() + restOfWord.join("");
-
-    return (
-      <>
-        <h3>{formatHeader()}</h3>
-
-        {question.type === "selection" && question.values.map((value) => {
-          return (
-            <div>
-              <input
-                type="radio"
-                name={question.name}
-                id={value}
-                value={value}
-                onChange={() => {}}
-              />
-              <label htmlFor={value}>{capitalize(value)}</label>
-            </div>
-          );
-        })}
-
-        {question.type === "text" &&
-          <div>
-            <label htmlFor={question.name}>{question.label}</label>
-            <input
-              type="text"
-              id={question.name}
-              name={question.name}
-              onChange={() => {}}
-            />
-          </div>
-        }
-      </>
-    );
+    return <Question data={questionData}/>
   };
 
   const previousQuestion = () => {
