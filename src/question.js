@@ -1,19 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { titleize, capitalize } from "./utils";
 
 export const Question = ({ data }) => {
-  const formatHeader = () =>
-    data.name
-      .replace(/([A-Z])/g, (match) => ` ${match}`)
-      .replace(/^./, (match) => match.toUpperCase())
-      .trim();
-
-  const capitalize = ([firstLetter, ...restOfWord]) =>
-    firstLetter.toUpperCase() + restOfWord.join("");
-
   return (
     <>
-      <h3>{formatHeader()}</h3>
+      <h3>{titleize(data.name)}</h3>
 
       {data.type === "selection" && data.values.map((value) => {
         return (
