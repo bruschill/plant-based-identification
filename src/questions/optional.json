@@ -1,0 +1,43 @@
+[
+  {
+    "type": "selection",
+    "name": "stamenType",
+    "values": [
+      "separate", "fusedToEachOther", "fusedToPetals", "fusedToPistil"
+    ]
+  },
+  {
+    "type": "text",
+    "name": "stamenCount",
+    "label": "How many?"
+  },
+  {
+    "type": "selection",
+    "name": "stamenArrangement",
+    "values": [
+      "alternateFromPetals", "oppositeFromPetals", "doesntApply"
+    ]
+  },
+  {
+    "type": "text",
+    "name": "chamberCount",
+    "label": "How many?"
+  },
+  {
+    "type": "text",
+    "name": "carpelCount",
+    "label": "How many?"
+  },
+  {
+    "type": "text",
+    "name": "pistilCount",
+    "label": "How many?"
+  },
+  {
+    "type": "selection",
+    "name": "pistilPosition",
+    "values": [
+      "superior", "inferior", "partWay"
+    ]
+  }
+]

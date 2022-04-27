@@ -1,28 +1,35 @@
 # Plant-based Identification
 
-## Available Scripts
+### Question Format
+- **type**
+  - `selection` - multi-choice question w/ radio button responses
+  - `text` - user-provided text answer
+- **name**
+  - maps to key in `profile` object, which is what's submitted to server
+```
+Type: selection
 
-In the project directory, you can run:
+name: input name, formatted for header
+values: input id, value, htmlFor in label, capitalized as label text
 
-### `yarn start`
+Ex.
+{
+  type: 'selection',
+  name: 'flowerType',
+  values: [
+      'regular', 'irregular'
+  ]
+}
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Type: text
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+name: input name, input id, htmlFor in label, formatted for header
+label: text for the label, usually a question
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Ex.
+{
+  type: 'text',
+  name: 'pistilCount',
+  label: 'How many?'
+}
+```

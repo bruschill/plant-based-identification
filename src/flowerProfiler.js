@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { list as questionList,
-         optionalList as optionalQuestionList } from "./question/lists";
+import baseQuestions from './questions/base.json';
+// import optionalQuestions from './optional.json';
 
 const INITIAL_STATE = {
   flowerType: '',
@@ -13,21 +13,60 @@ const INITIAL_STATE = {
   petalColor: '',
   stamenType: '',
   stamenCount: '',
-  stamenCountIsNumerous: false,
   stamenArrangement: '',
   chamberCount: '',
   carpelCount: '',
-  styleCount: '',
-  stigmaLobeCount: ''
+  styleCount: ''
 }
 
 export const FlowerProfiler = (props) => {
   const [profile, setProfile] = useState(INITIAL_STATE);
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(props.currentQuestionIndex || 0)
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
 
   const CurrentQuestion = () => {
-    const Component = questionList[currentQuestionIndex]
-    return <Component />;
+    const question = baseQuestions[currentQuestionIndex];
+
+    const formatHeader = () =>
+      question.name
+      .replace(/([A-Z])/g, (match) => ` ${match}`)
+      .replace(/^./, (match) => match.toUpperCase())
+      .trim();
+
+    const capitalize = ([firstLetter, ...restOfWord]) =>
+      firstLetter.toUpperCase() + restOfWord.join("");
+
+    return (
+      <>
+        <h3>{formatHeader()}</h3>
+
+        {question.type === "selection" && question.values.map((value) => {
+          return (
+            <div>
+              <input
+                type="radio"
+                name={question.name}
+                id={value}
+                value={value}
+                onChange={() => {}}
+              />
+              <label htmlFor={value}>{capitalize(value)}</label>
+            </div>
+          );
+        })}
+
+        {question.type === "text" &&
+          <div>
+            <label htmlFor={question.name}>{question.label}</label>
+            <input
+              type="text"
+              id={question.name}
+              name={question.name}
+              onChange={() => {}}
+            />
+          </div>
+        }
+      </>
+    );
   };
 
   const previousQuestion = () => {
@@ -37,7 +76,7 @@ export const FlowerProfiler = (props) => {
   };
 
   const nextQuestion = () => {
-    if(currentQuestionIndex < questionList.length - 1) {
+    if(currentQuestionIndex < baseQuestions.length - 1) {
       setCurrentQuestionIndex((currentQuestionIndex) => currentQuestionIndex + 1)
     }
   };

@@ -1,0 +1,50 @@
+[
+  {
+    "type": "selection",
+    "name": "flowerType",
+    "values": [
+      "regular", "irregular"
+    ]
+  },
+  {
+    "type": "selection",
+    "name": "flowerSex",
+    "values": [
+      "bisexual", "unisexual"
+    ]
+  },
+  {
+    "type": "selection",
+    "name": "sepalType",
+    "values": [
+      "separate", "united"
+    ]
+  },
+  {
+    "type": "text",
+    "name": "sepalCount",
+    "label": "How many?"
+  },
+  {
+    "type": "text",
+    "name": "sepalColor",
+    "label": "What color?"
+  },
+  {
+    "type": "selection",
+    "name": "petalType",
+    "values": [
+      "separate", "united"
+    ]
+  },
+  {
+    "type": "text",
+    "name": "petalCount",
+    "label": "How many?"
+  },
+  {
+    "type": "text",
+    "name": "petalColor",
+    "label": "What color?"
+  }
+]
