@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import baseQuestions from './questions/base.json';
 import { Question } from "./question";
+import baseQuestions from './questions/base.json';
 // import optionalQuestions from './optional.json';
 
 const INITIAL_STATE = {
@@ -17,7 +17,8 @@ const INITIAL_STATE = {
   stamenArrangement: '',
   chamberCount: '',
   carpelCount: '',
-  styleCount: ''
+  pistilCount: '',
+  pistilPosition: ''
 }
 
 export const FlowerProfiler = (props) => {
