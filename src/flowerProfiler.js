@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Question } from "./question";
 import baseQuestions from './questions/base.json';
 // import optionalQuestions from './optional.json';
@@ -56,8 +56,10 @@ export const FlowerProfiler = () => {
   return (
     <>
       <CurrentQuestion />
-      <button onClick={previousQuestion}>Previous</button>
-      <button onClick={nextQuestion}>Next</button>
+      <div className="mt-6 space-x-2">
+        <button className="px-4 py-2 rounded-lg bg-green-700 text-white" onClick={previousQuestion}>Previous</button>
+        <button className="px-4 py-2 rounded-lg bg-green-700 text-white" onClick={nextQuestion}>Next</button>
+      </div>
     </>
   );
 }

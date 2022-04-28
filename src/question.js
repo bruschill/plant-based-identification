@@ -5,11 +5,10 @@ import { titleize, capitalize } from "./utils";
 export const Question = ({ data, onAnswer, currentAnswer }) => {
   return (
     <>
-      <h3>{titleize(data.name)}</h3>
-
+      <h3 className="mt-4 text-2xl font-bold">{titleize(data.name)}</h3>
       {data.type === "selection" && data.values.map((value, idx) => {
         return (
-          <div key={idx}>
+          <div key={idx} className="mt-1">
             <input
               type="radio"
               name={data.name}
@@ -22,9 +21,8 @@ export const Question = ({ data, onAnswer, currentAnswer }) => {
           </div>
         );
       })}
-
       {data.type === "text" &&
-        <div>
+        <div className="mt-1">
           <label htmlFor={data.name}>{data.label}</label>
           <input
             type="text"

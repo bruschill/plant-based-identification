@@ -1,17 +1,15 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { FlowerProfiler} from "./flowerProfiler";
-
-import './app.css';
 
 function App() {
   return (
-    <Fragment>
-      <h1>Plant-based Identification</h1>
+    <div className="container">
+      <h1 className="mt-6 text-6xl font-bold">Plant-based Identification</h1>
 
-      <div id='question-container' className='question-container'>
+      <div>
         <FlowerProfiler />
       </div>
-    </Fragment>
+    </div>
   );
 }
 
