@@ -2,20 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { titleize, capitalize } from "./utils";
 
-export const Question = ({ data }) => {
+export const Question = ({ data, onAnswer, currentAnswer }) => {
   return (
     <>
       <h3>{titleize(data.name)}</h3>
 
-      {data.type === "selection" && data.values.map((value) => {
+      {data.type === "selection" && data.values.map((value, idx) => {
         return (
-          <div>
+          <div key={idx}>
             <input
               type="radio"
               name={data.name}
               id={value}
               value={value}
-              onChange={() => {}}
+              onChange={onAnswer}
+              checked={currentAnswer === value}
             />
             <label htmlFor={value}>{capitalize(value)}</label>
           </div>
@@ -29,7 +30,8 @@ export const Question = ({ data }) => {
             type="text"
             id={data.name}
             name={data.name}
-            onChange={() => {}}
+            onChange={onAnswer}
+            value={currentAnswer.length !== 0 ? currentAnswer : ''}
           />
         </div>
       }
@@ -43,5 +45,7 @@ Question.propTypes = {
     name: PropTypes.string.isRequired,
     values: PropTypes.arrayOf(PropTypes.string),
     label: PropTypes.string
-  })
+  }).isRequired,
+  onAnswer: PropTypes.func.isRequired,
+  currentAnswer: PropTypes.string
 };
