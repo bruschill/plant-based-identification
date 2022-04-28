@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
+
+.btn {
+  @apply px-4 py-2 rounded-lg shadow-md bg-green-600 text-white;
+  @apply hover:bg-green-500;
+  @apply active:bg-green-800;
+  @apply focus:outline-none focus:ring focus:ring-green-500 focus:ring-opacity-50;
+  @apply transform transition;
+}
+
+@tailwind utilities
