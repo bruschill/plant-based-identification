@@ -17,13 +17,13 @@ export const Question = ({ data, onAnswer, currentAnswer }) => {
               onChange={onAnswer}
               checked={currentAnswer === value}
             />
-            <label htmlFor={value}>{capitalize(value)}</label>
+            <label className="ml-1" htmlFor={value}>{capitalize(value)}</label>
           </div>
         );
       })}
       {data.type === "text" &&
         <div className="mt-1">
-          <label htmlFor={data.name}>{data.label}</label>
+          <label className="mr-1" htmlFor={data.name}>{data.label}</label>
           <input
             type="text"
             id={data.name}
