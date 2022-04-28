@@ -30,8 +30,8 @@ export const Question = ({ data, onAnswer, currentAnswer }) => {
             className="form-input"
             id={data.name}
             name={data.name}
-            onChange={onAnswer}
-            value={currentAnswer.length !== 0 ? currentAnswer : ''}
+            onBlur={onAnswer}
+            defaultValue={currentAnswer.length !== 0 ? currentAnswer : ''}
           />
         </div>
       }
