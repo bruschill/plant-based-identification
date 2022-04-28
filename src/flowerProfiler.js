@@ -35,8 +35,8 @@ export const FlowerProfiler = () => {
     return (
       <Question
         data={questionData}
-        currentAnswer={profile[questionData.name]}
         onAnswer={handleAnswer}
+        currentAnswer={profile[questionData.name]}
       />
     );
   };
@@ -57,8 +57,18 @@ export const FlowerProfiler = () => {
     <>
       <CurrentQuestion />
       <div className="mt-6 space-x-2">
-        <button className="px-4 py-2 rounded-lg shadow-md bg-green-700 text-white" onClick={previousQuestion}>Previous</button>
-        <button className="px-4 py-2 rounded-lg shadow-md bg-green-700 text-white" onClick={nextQuestion}>Next</button>
+        <button
+          className="px-4 py-2 rounded-lg shadow-md bg-green-700 text-white"
+          onClick={previousQuestion}
+        >
+          Previous
+        </button>
+        <button
+          className="px-4 py-2 rounded-lg shadow-md bg-green-700 text-white"
+          onClick={nextQuestion}
+        >
+          Next
+        </button>
       </div>
     </>
   );

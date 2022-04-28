@@ -11,6 +11,7 @@ export const Question = ({ data, onAnswer, currentAnswer }) => {
           <div key={idx} className="mt-1">
             <input
               type="radio"
+              className="form-radio"
               name={data.name}
               id={value}
               value={value}
@@ -26,6 +27,7 @@ export const Question = ({ data, onAnswer, currentAnswer }) => {
           <label className="mr-1" htmlFor={data.name}>{data.label}</label>
           <input
             type="text"
+            className="form-input"
             id={data.name}
             name={data.name}
             onChange={onAnswer}
