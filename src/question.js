@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Field } from 'formik';
 import { titleize, capitalize } from "./utils";
 
 export const Question = ({ data, onAnswer, currentAnswer }) => {
@@ -9,13 +10,12 @@ export const Question = ({ data, onAnswer, currentAnswer }) => {
       {data.type === "selection" && data.values.map((value, idx) => {
         return (
           <div key={idx} className="mt-1">
-            <input
+            <Field
               type="radio"
               className="form-radio"
               name={data.name}
               id={value}
               value={value}
-              onChange={onAnswer}
               checked={currentAnswer === value}
             />
             <label className="ml-1" htmlFor={value}>{capitalize(value)}</label>
@@ -25,19 +25,18 @@ export const Question = ({ data, onAnswer, currentAnswer }) => {
       {data.type === "text" &&
         <div className="mt-1">
           <label className="mr-1" htmlFor={data.name}>{data.label}</label>
-          <input
+          <Field
             type="text"
             className="form-input"
             id={data.name}
             name={data.name}
-            onBlur={onAnswer}
             defaultValue={currentAnswer.length !== 0 ? currentAnswer : ''}
           />
         </div>
       }
     </>
   );
-}
+};
 
 Question.propTypes = {
   data: PropTypes.shape({

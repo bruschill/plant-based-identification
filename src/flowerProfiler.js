@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Formik, Form } from "formik";
 import { Question } from "./question";
 import baseQuestions from './questions/base.json';
 // import optionalQuestions from './optional.json';
@@ -25,6 +26,10 @@ export const FlowerProfiler = () => {
   const [profile, setProfile] = useState(INITIAL_STATE);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
 
+  const submitFn = (values) => {
+    alert(JSON.stringify(values, null, 2));
+  }
+
   const handleAnswer = (e) => {
     setProfile(prevState => ({ ...prevState, [e.target.name]: e.target.value }));
   }
@@ -33,11 +38,15 @@ export const FlowerProfiler = () => {
     const questionData = baseQuestions[currentQuestionIndex];
 
     return (
-      <Question
-        data={questionData}
-        onAnswer={handleAnswer}
-        currentAnswer={profile[questionData.name]}
-      />
+      <Formik initialValues={INITIAL_STATE} onSubmit={submitFn}>
+        <Form>
+          <Question
+            data={questionData}
+            onAnswer={handleAnswer}
+            currentAnswer={profile[questionData.name]}
+          />
+        </Form>
+      </Formik>
     );
   };
 
