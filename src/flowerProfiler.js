@@ -16,17 +16,6 @@ export const FlowerProfiler = () => {
     setState({...state, ...data});
   }
 
-  const CurrentQuestion = () => {
-    const questionData = baseQuestions[currentQuestionIndex];
-
-    return (
-      <Question
-        data={questionData}
-        currentAnswer={state[questionData.name]}
-      />
-    );
-  };
-
   const previousQuestion = () => {
     if(currentQuestionIndex > 0) {
       setCurrentQuestionIndex((currentQuestionIndex) => currentQuestionIndex - 1 )
@@ -37,6 +26,17 @@ export const FlowerProfiler = () => {
     if(currentQuestionIndex < baseQuestions.length - 1) {
       setCurrentQuestionIndex((currentQuestionIndex) => currentQuestionIndex + 1)
     }
+  };
+
+  const CurrentQuestion = () => {
+    const questionData = baseQuestions[currentQuestionIndex];
+
+    return (
+      <Question
+        data={questionData}
+        currentAnswer={state[questionData.name]}
+      />
+    );
   };
 
   return (
