@@ -1,6 +1,6 @@
 import React from 'react';
-import { FlowerProfiler } from "./flowerProfiler";
 import { AppProvider } from "./state";
+import { FlowerProfiler } from "./flowerProfiler";
 
 function App() {
   return (

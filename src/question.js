@@ -1,23 +1,23 @@
-import React, { forwardRef, useContext } from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import { useForm } from "react-hook-form";
-import { AppStateContext } from "./state";
+import { useAppState } from "./state";
 import { titleize, capitalize } from "./utils";
 
 const Input = forwardRef((props, ref) => {
-  return <input ref={ref} className="form-input" {...props} />;
+  return <input ref={ref} {...props} />;
 });
 
 export const Question = ({ data, currentAnswer }) => {
-  const [state] = useContext(AppStateContext);
+  const [state] = useAppState();
   const {
     register,
     formState: { errors },
     setValue
   } = useForm({ defaultValues: state, mode: "onSubmit" });
 
-  const handleRadioSelect = ({ target: { name, value }}) => {
-    setValue(name, value)
+  const handleRadioSelect = ({ target: { name, defaultValue }}) => {
+    setValue(name, defaultValue)
   }
 
   return (
@@ -26,7 +26,7 @@ export const Question = ({ data, currentAnswer }) => {
       {data.type === "selection" && data.values.map((value, idx) => {
         return (
           <div key={idx} className="mt-1">
-            <input
+            <Input
               {...register(data.name)}
               type="radio"
               className="form-radio"
@@ -42,12 +42,13 @@ export const Question = ({ data, currentAnswer }) => {
       {data.type === "text" &&
         <div className="mt-1">
           <label className="mr-1" htmlFor={data.name}>{data.label}</label>
-          <input
+          <Input
             {...register(data.name)}
             type="text"
             className="form-input"
             id={data.name}
             name={data.name}
+            value={state[data.name]}
           />
         </div>
       }
