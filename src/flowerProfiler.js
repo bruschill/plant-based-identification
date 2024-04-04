@@ -1,52 +1,32 @@
-import React, { useState } from 'react';
-import { Formik, Form } from "formik";
+import React, { useContext, useState } from 'react';
+import { useForm } from "react-hook-form";
 import { Question } from "./question";
 import baseQuestions from './questions/base.json';
+import { AppStateContext, useAppState } from "./state";
 // import optionalQuestions from './optional.json';
 
-const INITIAL_STATE = {
-  "flowerType": '',
-  "flowerSex": '',
-  "sepalType": '',
-  "sepalCount": '',
-  "sepalColor": '',
-  "petalType": '',
-  "petalCount": '',
-  "petalColor": '',
-  "stamenType": '',
-  "stamenCount": '',
-  "stamenArrangement": '',
-  "chamberCount": '',
-  "carpelCount": '',
-  "pistilCount": '',
-  "pistilPosition": ''
-}
-
 export const FlowerProfiler = () => {
-  const [profile, setProfile] = useState(INITIAL_STATE);
+  const [state, setState]= useContext(AppStateContext);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
+  const {
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ defaultValues: state, mode: "onSubmit" });
 
-  const submitFn = (values) => {
-    alert(JSON.stringify(values, null, 2));
-  }
-
-  const handleAnswer = (e) => {
-    setProfile(prevState => ({ ...prevState, [e.target.name]: e.target.value }));
+  const saveResponse = (data) => {
+    console.log(data)
+    setState({...state, ...data});
+    console.log(state);
   }
 
   const CurrentQuestion = () => {
     const questionData = baseQuestions[currentQuestionIndex];
 
     return (
-      <Formik initialValues={INITIAL_STATE} onSubmit={submitFn}>
-        <Form>
-          <Question
-            data={questionData}
-            onAnswer={handleAnswer}
-            currentAnswer={profile[questionData.name]}
-          />
-        </Form>
-      </Formik>
+      <Question
+        data={questionData}
+        currentAnswer={state[questionData.name]}
+      />
     );
   };
 
@@ -63,12 +43,12 @@ export const FlowerProfiler = () => {
   };
 
   return (
-    <>
-      <CurrentQuestion />
+    <form onSubmit={handleSubmit(saveResponse)}>
+      <CurrentQuestion/>
       <div className="mt-6 space-x-2">
         <button className="btn" onClick={previousQuestion}>Previous</button>
         <button className="btn" onClick={nextQuestion}>Next</button>
       </div>
-    </>
+    </form>
   );
 }
