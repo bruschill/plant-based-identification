@@ -21,7 +21,7 @@ const INITIAL_STATE = {
 export const AppStateContext = createContext({});
 
 export function AppProvider({ children }) {
-  const value = useState({});
+  const value = useState(INITIAL_STATE);
   return (
     <AppStateContext.Provider value={value}>
       {children}

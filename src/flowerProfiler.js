@@ -10,9 +10,12 @@ export const FlowerProfiler = () => {
   const {
     handleSubmit,
     formState: { errors },
+    register
   } = useForm({ defaultValues: state, mode: "onSubmit" });
 
   const saveResponse = (data) => {
+    console.log(state)
+    console.log(data)
     setState({...state, ...data});
   }
 
@@ -28,20 +31,12 @@ export const FlowerProfiler = () => {
     }
   };
 
-  const CurrentQuestion = () => {
-    const questionData = baseQuestions[currentQuestionIndex];
-
-    return (
-      <Question
-        data={questionData}
-        currentAnswer={state[questionData.name]}
-      />
-    );
-  };
-
   return (
     <form onSubmit={handleSubmit(saveResponse)}>
-      <CurrentQuestion/>
+      <Question
+        data={baseQuestions[currentQuestionIndex]}
+        register={register}
+      />
       <div className="mt-6 space-x-2">
         { currentQuestionIndex > 0 && <button className="btn" onClick={previousQuestion}>Previous</button> }
         <button className="btn" onClick={nextQuestion}>Next</button>
